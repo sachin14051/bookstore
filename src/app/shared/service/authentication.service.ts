@@ -8,7 +8,7 @@ export class AuthenticationService {
   
    database= {
     email : "user@user.com",
-    password : "user@user.com"
+    password : "8ed46d8"
    }
   constructor() { }
 

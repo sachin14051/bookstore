@@ -1,0 +1,41 @@
+<h2 class="bg-primary text-white p-3">books Add</h2>
+<div class="row">
+    <div class="col-md-8 offset-2 ">
+
+        <form class="example-form" [formGroup]="bookForm" (ngSubmit)="OnAddBook()">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>title</mat-label>
+                <input matInput #message  placeholder="book title" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>author</mat-label>
+                <input matInput #message  placeholder="book author" formControlName="author">
+            </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-form mb-3">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>price</mat-label>
+                <input matInput #message maxlength="3" placeholder="book price" formControlName="price">
+            </mat-form-field>
+      
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Book id</mat-label>
+                <input matInput #message  placeholder="book id" formControlName="id">
+            </mat-form-field>
+
+        <div class="text-center">
+            <button mat-raised-button type="submit">submit</button>
+        </div>
+        </form>
+
+    </div>
+</div>

@@ -6,24 +6,40 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component'
-
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { BookcrudComponent } from './shared/components/bookcrud/bookcrud.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './shared/material/material.module';
+import { InterceptorService } from './shared/service/interceptor.service';
+import { HomeComponent } from './shared/components/home/home.component';
+import { RemoveitemComponent } from './shared/components/removeitem/removeitem.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BookcrudComponent,
+    HomeComponent,
+    RemoveitemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,5 +17,8 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem("loginKey");
     this._router.navigate(['/'])
   }
+  onaddBook(){
+    this._router.navigate(['/bookCrud'])
+  }
 
 }

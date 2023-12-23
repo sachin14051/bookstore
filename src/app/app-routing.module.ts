@@ -12,6 +12,8 @@ const routes: Routes = [
   {path: "navbar", component:NavbarComponent, canActivate:[LoginService]},
   {path: "home", component:HomeComponent, canActivate:[LoginService]},
   {path: "bookCrud", component:BookcrudComponent, canActivate:[LoginService]},
+  {path: "bookCrud/:id/edit", component:BookcrudComponent, canActivate:[LoginService]},
+
   {path:"pageNotFound" , component : PageNotFoundComponent},
   {path:"**", redirectTo:"pageNotFound"}
 

@@ -8,8 +8,8 @@ import Swal from 'sweetalert2';
 export class AuthenticationService {
   
    database= {
-    email : "user@user.com",
-    password : "8ed46d8"
+    email : "admin",
+    password : "admin"
    }
   constructor() { }
 
@@ -25,6 +25,13 @@ export class AuthenticationService {
       });
       return true
     }else{
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "login UnSuccessful (userId:admin, password:admin)",
+        showConfirmButton: true,
+        timer: 1500
+      });
       return false
     }
 

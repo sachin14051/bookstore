@@ -35,8 +35,10 @@ export class LoginComponent implements OnInit {
     }
     this.loginForm.reset()
     this.loginService.isAuthenticated(obj)
+ 
   
-     this._router.navigate(['/navbar'])
+     this._router.navigate(['/navbar']);
+  
   }
 
 }

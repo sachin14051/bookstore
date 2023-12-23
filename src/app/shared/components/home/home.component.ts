@@ -3,8 +3,7 @@ import { BooksDataService } from '../../service/books-data.service';
 import { Ibooks } from '../../model/model';
 import { MatDialog } from '@angular/material/dialog';
 import { RemoveitemComponent } from '../removeitem/removeitem.component';
-import { identity } from 'rxjs';
-import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-home',
